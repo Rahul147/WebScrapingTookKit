@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Scrapper</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+
+	<div class="rahul"></div>
+	<div class="Nafeen"></div>
+	<div class="AJAY"></div>
+	<div class="rahul"></div>
+
+	<script type="text/javascript">
+	var NameOfAllPages = ["http://cozee.in/", "http://cozee.in/for-owners", "http://cozee.in/careers"];
+
+function FetchUnique() {
+	// To fetch unique class names and print them
+	var allTags = document.body.getElementsByTagName('*');
+	var classNames = {};
+		for (var tg = 0; tg< allTags.length; tg++) {
+	    	var tag = allTags[tg];
+		    if (tag.className) {
+		      var classes = tag.className.split(" ");
+				for (var cn = 0; cn < classes.length; cn++){
+				  var cName = classes[cn];
+				  if (! classNames[cName]) {
+				    classNames[cName] = true;
+				  }
+			}
+	    }   
+	}
+	var classList = [];
+	for (var name in classNames) classList.push(name);
+	console.log(classNames);
+	console.log(classList);
+}
+
+	</script>
+</body>
+</html>
